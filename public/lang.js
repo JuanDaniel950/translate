@@ -43,7 +43,7 @@ document.getElementById('uploadButton').addEventListener('click', () => {
           })
           .then(response => response.text())
           .then(data => {
-              console.log(data); // Mensaje de confirmación del servidor
+              console.log("guardado correctamente",data); // Mensaje de confirmación del servidor
 
               fileInput.value = '';
           })
