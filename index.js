@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs-extra');
-const cors = require('cors'); // Importa el middleware cors
+const cors = require('cors');
+const axios = require('axios'); // Importa Axios
 const app = express();
 const port = 4000;
 
@@ -9,6 +10,21 @@ app.use(express.static('public')); // Servir archivos estáticos desde la carpet
 app.use(express.json());
 // Configura el middleware cors
 app.use(cors());
+
+// Configura un endpoint para servir el archivo JSON
+app.get('/traduccion', async (req, res) => {
+  try {
+    // Realiza una solicitud GET con Axios para obtener el archivo JSON remoto
+    const response = await axios.get('https://dtl360.com/prueba_concepto/traduccion.json');
+
+    // Devuelve el contenido del archivo JSON como respuesta
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error al obtener el archivo JSON remoto:', error);
+    res.status(500).json({ error: 'Error al obtener el archivo JSON remoto' });
+  }
+});
+
 app.post('/upload', (req, res) => {
   if (!req.body || !req.body.fileName || !req.body.fileContent) {
     return res.status(400).send('Falta información');
