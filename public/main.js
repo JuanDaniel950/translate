@@ -1,4 +1,4 @@
-fetch('traduccion.json')
+fetch('https://translatedtl.onrender.com/traduccion.json')
 .then(response => response.json())
 .then(configuracion => {
     function traducirAEspanol() {
