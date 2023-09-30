@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-	<title>Multilang Vanilla JS</title>
+    <title>Título de la WEB</title>
+    <meta charset="UTF-8">
+    <style>
+        header { background-color: yellow; }
+    </style>
 </head>
 <body>
- 	<nav>	
-		<ul>
-			<li class="btn-lang" data-lang="hu">Magyar</li>
-			<li class="btn-lang" data-lang="en">English</li>
-			<li class="btn-lang" data-lang="gr" >Deutsch</li>
-			<li class="btn-lang" data-lang="es" >Español</li>
-			<li class="btn-lang" data-lang="ve" >Veneco</li>
-		</ul>
-	</nav>
+    <header>
+        <h1 id="titulo">Título de la WEB</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article>
+            <h2>CONTENIDO PRINCIPAL</h2>
+            <p>Este es el contenido principal de mi web.</p>
+        </article>
+    </section>
+    <aside>
+        <h3 id="testimonios111">Testimonios</h3>
+        <p>Me gusta mucho esta página.</p>
+    </aside>
 
-	<section>
-		<input type="file" id="fileInput" accept=".json">
-<button id="uploadButton">Subir Archivo</button>
-	</section>
 
-	<section>
-		<p data-block="1.md" data-txt="title"></p>
-		<p data-block="1.md" data-txt="body"></p>
-		<p data-block="2.md" data-txt="title"></p>
-		<p data-block="2.md" data-txt="body"></p>        
-	</section>
-	<script src="lang.js"></script>
+
+    <footer>
+        <h4 id="redes-sociales">Redes sociales</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+    </footer>
+    <script src="main.js"></script>
 </body>
 </html>
