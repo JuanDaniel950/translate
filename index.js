@@ -1,12 +1,14 @@
 const express = require('express');
 const fs = require('fs-extra');
+const cors = require('cors'); // Importa el middleware cors
 const app = express();
 const port = 4000;
 
 app.use(express.static('public')); // Servir archivos estáticos desde la carpeta 'public'
 
 app.use(express.json());
-
+// Configura el middleware cors
+app.use(cors());
 app.post('/upload', (req, res) => {
   if (!req.body || !req.body.fileName || !req.body.fileContent) {
     return res.status(400).send('Falta información');
