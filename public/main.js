@@ -36,7 +36,7 @@ fetch('https://translatedtl.onrender.com/traduccion')
           // El usuario eligió inglés (o canceló)
           traducirAIngles();
         }
-      }, 8000); // 5000 milisegundos = 5 segundos
+      }, 7000); // 5000 milisegundos = 5 segundos
 })
 .catch(error => {
     console.error('Error al cargar la configuración de traducción:', error);
